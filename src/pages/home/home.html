@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle> <ion-icon name="menu"></ion-icon> </button>
+    <ion-title> Guia de Uberaba </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <header>
+    <ion-slides #slide autoplay="3000" loop="true" speed="300" *ngIf="tourismA && tourismA.length">
+      <ion-slide class="header__home" *ngFor="let item of tourismA" [style.background-image]="imageThumb(item?.image) | sanitizeStyle" (click)="tourismTapped($event, item)">
+        <h1 class="header__title"> {{ item?.title }} </h1>
+
+        <div class="header__shadow"></div>
+      </ion-slide>
+    </ion-slides>
+  </header>
+
+  <ion-grid id="events" padding class="section__content" *ngIf="schedulesA && schedulesA.length">
+    <ion-row align-items-center class="content--header">
+      <ion-col no-padding class="content--title"> <h1> Eventos </h1> </ion-col>
+
+      <ion-col no-padding class="content--btn"> <button class="no-shadow" ion-button ion-round color="gray" (click)="goToTab(4)"> Ver todos </button> </ion-col>
+    </ion-row>
+
+    <ion-row justify-content-around>
+      <ion-col col-12 no-padding *ngFor="let item of schedulesA" (click)="schedulesTapped($event, item)" >
+        <ion-card no-padding>
+          <div class="featured_image" [style.background-image]='imageThumb(item?.image) | sanitizeStyle'></div>
+
+          <ion-card-content>
+            <ion-card-title> {{ item?.title }} </ion-card-title>
+
+            <p> {{ item?.local?.title }} <br> {{ item?.atdayandhour }} </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid id="hotels" padding class="section__content" *ngIf="companiesA && companiesA.length">
+    <ion-row align-items-center class="content--header">
+      <ion-col no-padding class="content--title"> <h1> Hotéis </h1> </ion-col>
+
+      <ion-col no-padding class="content--btn"> <button class="no-shadow" ion-button ion-round color="gray" (click)="goToTab(2)"> Ver todos </button> </ion-col>
+    </ion-row>
+
+    <ion-row justify-content-around>
+      <ion-col no-padding *ngFor="let item of companiesA" (click)="companiesTapped($event, item)" >
+        <ion-card no-padding>
+          <div class="featured_image" [style.background-image]='imageThumb(item?.cover) | sanitizeStyle'></div>
+
+          <ion-card-content>
+            <ion-card-title> {{ item?.title }} </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid id="restaurants" padding class="section__content" *ngIf="gourmetA && gourmetA.length">
+    <ion-row align-items-center class="content--header">
+      <ion-col no-padding class="content--title"> <h1> Restaurantes </h1> </ion-col>
+      <ion-col no-padding class="content--btn"> <button class="no-shadow" ion-button ion-round color="gray" (click)="goToTab(1)"> Ver todos </button> </ion-col>
+    </ion-row>
+
+    <ion-row justify-content-around>
+      <ion-col col-12 no-padding *ngFor="let item of gourmetA" (click)="gourmetTapped($event, item)" >
+        <ion-card no-padding>
+          <div class="featured_image" [style.background-image]='imageThumb(item?.cover) | sanitizeStyle'></div>
+
+          <ion-card-content>
+            <ion-card-title> {{ item?.title }} </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

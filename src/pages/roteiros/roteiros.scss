@@ -1,0 +1,22 @@
+page-roteiros {
+  .featured_image {
+    background-size: cover;
+    background-position: center;
+    height: 25vw;
+  }
+
+  .card-md {
+    width: calc(100% - 10px);
+    margin: 0 auto;
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+    padding-bottom: 0;
+    padding-top: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

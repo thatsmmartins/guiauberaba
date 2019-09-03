@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> {{ schedule?.title }} </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content elastic-header>
+  <div class="background-image" [style.background-image]='imageThumb(schedule?.image) | sanitizeStyle'></div>
+
+  <div class="main-content">
+    <ion-list no-lines>
+      <ion-item>
+        <h1> {{ schedule?.title }} </h1>
+      </ion-item>
+
+      <ion-item *ngIf="schedule?.local.address">
+        <ion-icon name="md-pin" item-start></ion-icon>
+        <h2>{{ schedule?.local.title }}</h2>
+        <h3>{{ schedule?.local.address }}</h3>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="md-calendar" item-start></ion-icon>
+        <h2> {{ schedule?.atdayandhour }} </h2>
+      </ion-item>
+      <ion-item *ngIf="schedule?.local.telephone" >
+        <ion-icon name="md-call" item-start></ion-icon>
+        <h2> {{ schedule?.local.telephone }} </h2>
+      </ion-item>
+      <ion-item *ngIf="schedule?.excerpt" text-wrap>
+        <ion-icon name="md-information-circle" item-start></ion-icon>
+        <p [innerHTML]="schedule?.excerpt"></p>
+      </ion-item>
+
+      <ion-item>
+        <p [innerHTML]="schedule?.description"></p>
+      </ion-item>
+
+      <ion-item>
+        <a href="https://www.curtoo.com/pra-fazer/{{schedule?.slug}}" target="_blank" title="Mais informações"> Clique para saber mais informações </a>
+      </ion-item>
+    </ion-list>
+
+    <div #map id="map"></div>
+  </div>
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> {{ gourmet?.title }} </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="background-image" [style.background-image]='imageThumb(gourmet?.cover) | sanitizeStyle'></div>
+
+  <div class="main-content">
+    <div class="hotel_logo">
+      <div class="logo" [style.background-image]='imageThumb(gourmet?.image) | sanitizeStyle'></div>
+    </div>
+
+    <div class="actions">
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col (click)="lauchNavigator([0, 0])">
+            <div> <ion-icon name="ios-navigate"></ion-icon> </div>
+            <span> Como Chegar </span>
+          </ion-col>
+
+          <ion-col (click)="callIt('+55'+gourmet?.telephone)">
+            <div> <ion-icon name="md-call"></ion-icon> </div>
+            <span> Ligar </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <ion-list no-lines>
+      <ion-item text-wrap>
+        <ion-icon name="md-pin" item-start></ion-icon>
+        <h2> {{ gourmet?.address }} </h2>
+        <h3> {{ gourmet?.neighborhood }} </h3>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="md-call" item-start></ion-icon>
+        <h2> {{ gourmet?.telephone }} </h2>
+      </ion-item>
+
+      <ion-item *ngIf="gourmet?.cellphone" >
+        <ion-icon name="md-call" item-start></ion-icon>
+        <h2> {{ gourmet?.cellphone }} </h2>
+      </ion-item>
+
+      <ion-item *ngIf="gourmet?.description" text-wrap>
+        <ion-icon name="md-information-circle" item-start></ion-icon>
+        <p [innerHTML]="gourmet?.description"></p>
+      </ion-item>
+
+      <ion-item *ngIf="gourmet?.shownat == 2">
+        <a href="https://www.curtoo.com/{{gourmet?.slug}}" target="_blank" title="Mais informações"> Clique para saber mais informações </a>
+      </ion-item>
+    </ion-list>
+
+    <div #map id="map"></div>
+  </div>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> {{ tourism?.title }} </ion-title>
+    <ion-buttons end (click)="lauchNavigator([0, 0])">
+      <button ion-button icon-only> <ion-icon name="md-navigate"></ion-icon> </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image" [style.background-image]="imageThumb(tourism?.cover) | sanitizeStyle"></div>
+
+  <div class="main-content">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-icon name="md-pin" item-start></ion-icon>
+        <h2> {{ tourism?.address }} </h2>
+      </ion-item>
+
+      <ion-item *ngIf="tourism?.telephone">
+        <ion-icon name="md-call" item-start></ion-icon>
+        <h2> {{ tourism?.telephone }} </h2>
+      </ion-item>
+
+      <ion-item *ngIf="tourism?.description" text-wrap>
+        <ion-icon name="md-information-circle" item-start></ion-icon>
+        <p [innerHTML]="tourism?.description"></p>
+      </ion-item>
+    </ion-list>
+
+    <div #map id="map"></div>
+  </div>
+</ion-content>

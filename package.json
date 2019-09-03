@@ -1,0 +1,72 @@
+{
+  "name": "Guia Uberaba",
+  "version": "1.0.0",
+  "author": "Moblearn",
+  "description": "Este aplicativo é ideal para quem precisa de um Guia Turístico e Cultural de Uberaba.",
+  "homepage": "http://minhauberaba.com.br/",
+  "private": true,
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
+  "dependencies": {
+    "@angular/common": "4.4.4",
+    "@angular/compiler": "4.4.4",
+    "@angular/compiler-cli": "4.4.4",
+    "@angular/core": "4.4.4",
+    "@angular/forms": "4.4.4",
+    "@angular/http": "4.4.4",
+    "@angular/platform-browser": "4.4.4",
+    "@angular/platform-browser-dynamic": "4.4.4",
+    "@ionic-native/core": "4.3.2",
+    "@ionic-native/launch-navigator": "^4.5.3",
+    "@ionic-native/push": "^4.5.3",
+    "@ionic-native/splash-screen": "4.3.2",
+    "@ionic-native/status-bar": "4.3.2",
+    "@ionic/storage": "2.0.1",
+    "cordova-android": "7.1.4",
+    "cordova-ios": "^4.5.5",
+    "cordova-plugin-actionsheet": "^2.3.3",
+    "cordova-plugin-device": "^1.1.7",
+    "cordova-plugin-dialogs": "^2.0.1",
+    "cordova-plugin-ionic-webview": "^1.2.1",
+    "cordova-plugin-splashscreen": "^4.1.0",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-support-google-services": "^1.1.0",
+    "ionic-angular": "3.8.0",
+    "ionic-gallery-modal": "^0.2.7",
+    "ionic-plugin-keyboard": "^2.2.1",
+    "ionicons": "3.0.0",
+    "phonegap-plugin-multidex": "^1.0.0",
+    "prod": "^1.0.1",
+    "rxjs": "5.4.3",
+    "sw-toolbox": "3.6.0",
+    "uk.co.workingedge.phonegap.plugin.launchnavigator": "^4.2.2",
+    "zone.js": "0.8.18"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "3.2.4",
+    "typescript": "2.3.4"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-device": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-whitelist": {},
+      "ionic-plugin-keyboard": {},
+      "uk.co.workingedge.phonegap.plugin.launchnavigator": {
+        "LOCATION_USAGE_DESCRIPTION": "This app requires access to your location for navigation purposes"
+      },
+      "cordova-plugin-statusbar": {}
+    },
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+<ion-menu type="overlay" [content]="content">
+  <ion-header no-border style="background-image: url('./assets/images/menu-bg.jpg')">
+    <ion-toolbar>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list no-lines>
+      <button menuClose ion-item *ngFor="let page of pages" (click)="openPage(page)" icon-start>
+        <ion-icon [name]="page.icon" [ngStyle]="{'color': '#737373'}" item-start></ion-icon>
+        {{page.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

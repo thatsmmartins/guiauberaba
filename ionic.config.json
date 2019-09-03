@@ -1,0 +1,8 @@
+{
+  "name": "guia-uberaba",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "fe853fd6"
+}

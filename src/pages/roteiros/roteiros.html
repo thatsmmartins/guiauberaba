@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle> <ion-icon name="menu"></ion-icon> </button>
+    <ion-title> Roteiros </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid no-padding class="section__content">
+    <ion-row>
+      <ion-col col-12 no-padding *ngFor="let item of tourismA" (click)="tourismTapped($event, item)" >
+        <ion-card no-padding>
+          <div class="featured_image" [style.background-image]='imageThumb(item?.cover) | sanitizeStyle'></div>
+
+          <ion-card-content>
+            <ion-card-title> {{ item?.title }} </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
